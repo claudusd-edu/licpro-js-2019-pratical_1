@@ -1,28 +1,28 @@
 const string = require('../src/string');
 // Futher import's module 
 
-test('default export of module string return "Hi"', () => {
+test('default export of module string returns "Hi"', () => {
   expect(string).toBe('Hi');
 });
 
-test('default export of module fonction return a function', () => {
+test('default export of module fonction returns a function', () => {
   expect(fonction).toBeInstanceOf(Function);
 });
 
-test('default export of module student return a class', () => {
+test('default export of module student returns a class', () => {
   expect(Student).toBeInstanceOf(Function);
 });
 
-test('export of module examen return "easy" and "hard" function', () => {
+test('export of module examen returns "easy" and "hard" function', () => {
   expect(easy).toBeInstanceOf(Function);
   expect(hard).toBeInstanceOf(Function);
 });
 
-test('default export of module fonction return value passing in parameter', () => {
+test('default export of module fonction returns value passed as a parameter', () => {
   expect(fonction(6)).toBe(6);
 });
 
-test('default export of module student return a instance of Student', () => {
+test('default export of module student returns an instance of Student', () => {
   expect(new Student()).toBeInstanceOf(Student);
 });
 
@@ -37,7 +37,7 @@ test('Student class has method "fullName"', () => {
   expect(student.fullName).toBeInstanceOf(Function);
 });
 
-test('Student method "fullName" return the fullName of the student', () => {
+test('Student method "fullName" returns the fullName of the student', () => {
   const student = new Student('Claude', 'Dioudonnat');
   expect(student.fullName()).toBe('Claude Dioudonnat');
 });
@@ -48,11 +48,11 @@ test('Student method should be only bind for the current student', () => {
   expect(fullName()).toBe('Claude Dioudonnat');
 })
 
-test('Studen class shoudl have a function "examen" defined in class definition"', () => {
+test('Student class should have a function "examen" defined in class definition"', () => {
   expect(Student.prototype.examen).toBeInstanceOf(Function);
 });
 
-test('The Student\'s method "examen" shoudl call the first parameter has an function', () => {
+test('The Student\'s method "examen" should call the first parameter as a function', () => {
   const student = new Student('Claude', 'Dioudonnat');
 
   const mockedExamen = jest.fn();
@@ -75,7 +75,7 @@ test('The Student\'s method "examen" should call the case callback with value of
   expect(mockedExamen).toHaveBeenCalledWith(student.level);
 });
 
-test('The Student\'s method "examen" should set the value return by the callback in array "grade" property', () => {
+test('The Student\'s method "examen" should set the value returned by the callback in array "grade" property', () => {
   const student = new Student('Claude', 'Dioudonnat');
   student.examen(() => {
     return 9;
@@ -88,7 +88,7 @@ test('The Student\'s method "examen" should set the value return by the callback
   expect(student.grade.length).toBe(2);
 });
 
-test('The Student\'s should have method "average" who compute grade\'s average', () => {
+test('The Student\'s should have method "average" which compute grade\'s average', () => {
   const student = new Student('Claude', 'Dioudonnat');
   student.examen(() => {
     return 9;
